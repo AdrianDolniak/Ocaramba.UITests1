@@ -21,7 +21,7 @@ namespace Ocaramba.UITests1.Tests
             var sortablePage = new SortablePage(this.DriverContext);
             Assert.AreEqual("Data Tables", sortablePage.GetHeader());
             var lastNames = new Collection<string> { "Smith", "Bach", "Doe", "Conway" };
-            Assert.AreEqual(lastNames, sortablePage.GetValues());
+            CollectionAssert.AreEqual(lastNames, sortablePage.GetValues());
         }
     }
 }

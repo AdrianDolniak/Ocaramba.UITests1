@@ -19,7 +19,7 @@ namespace Ocaramba.UITests1.PageObjects
         private readonly ElementLocator
             pageHeader = new ElementLocator(Locator.XPath, "//h3[.='Data Tables']"),
             pageTable = new ElementLocator(Locator.CssSelector, "[id='table1']"),
-            pageRows = new ElementLocator(Locator.TagName, "tr");
+            pageRows = new ElementLocator(Locator.XPath, "//*[@id='table1']/tbody/tr/td[1]");
 
         public SortablePage(DriverContext driverContext)
             : base(driverContext)
@@ -36,17 +36,16 @@ namespace Ocaramba.UITests1.PageObjects
             return pageHeaderText;
         }
 
-        public string GetValues()
-        {
-            // not finished yet
+        public Collection<string> GetValues()
+        {            
             Collection<string> lastNames = new Collection<string>();
-            var elements = this.Driver.GetElements(this.pageTable);
+            var elements = this.Driver.GetElements(this.pageRows);
             foreach (var el in elements)
             {
                 lastNames.Add(el.Text);
                 Logger.Debug("lastName '{0}'", el.Text);
             }
-            return lastNames.ToString();
+            return lastNames;
         }
     }
 }
