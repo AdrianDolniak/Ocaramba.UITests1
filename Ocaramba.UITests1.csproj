@@ -20,12 +20,17 @@
 	<ItemGroup>
     <Compile Include="DataDriven\DataDrivenHelper.cs" />
     <Compile Include="DataDriven\TestData.cs" />
+    <Compile Include="PageObjects\DragAndDropPage.cs" />
     <Compile Include="PageObjects\DropdownPage.cs" />
+    <Compile Include="PageObjects\DynamicLoadingPage.cs" />
     <Compile Include="PageObjects\InternetPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\FormAuthenticationPage.cs" />
     <Compile Include="PageObjects\SortablePage.cs" />
+    <Compile Include="PageObjects\StatusCodesPage.cs" />
+    <Compile Include="Tests\DragAndDropPageTest.cs" />
     <Compile Include="Tests\DropdownPageTest.cs" />
+    <Compile Include="Tests\DynamicLoadingPageTest.cs" />
     <Compile Include="Tests\HerokuappTestsNUnit.cs" />
     <Compile Include="ProjectBaseConfiguration.cs" />
     <Compile Include="ProjectPageBase.cs" />
@@ -34,6 +39,7 @@
     <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Tests\FormAuthenticationPageTest.cs" />
     <Compile Include="Tests\SortablePageTest.cs" />
+    <Compile Include="Tests\StatusCodesPageTest.cs" />
 	</ItemGroup>
   <ItemGroup>
     <None Include="appsettings.Linux.json">

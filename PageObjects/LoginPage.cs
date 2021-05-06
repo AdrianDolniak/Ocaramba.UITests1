@@ -21,8 +21,6 @@ namespace Ocaramba.UITests1.PageObjects
         public LoginPage(DriverContext driverContext)
             : base(driverContext)
         {
-            Logger.Info("Waiting for page to open");
-            this.Driver.IsElementPresent(this.pageHeader, BaseConfiguration.ShortTimeout);
         }
 
         /// <summary>
@@ -30,6 +28,7 @@ namespace Ocaramba.UITests1.PageObjects
         /// </summary>
         public string GetHeader()
         {
+            this.Driver.IsElementPresent(this.pageHeader, BaseConfiguration.MediumTimeout);
             var pageHeaderText = this.Driver.GetElement(this.pageHeader).Text;
             Logger.Info(CultureInfo.CurrentCulture, "Header text: {0}", pageHeaderText);
             return pageHeaderText;

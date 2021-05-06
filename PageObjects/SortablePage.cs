@@ -19,7 +19,7 @@ namespace Ocaramba.UITests1.PageObjects
         private readonly ElementLocator
             pageHeader = new ElementLocator(Locator.XPath, "//h3[.='Data Tables']"),
             pageTable = new ElementLocator(Locator.CssSelector, "[id='table1']"),
-            pageRows = new ElementLocator(Locator.XPath, "//*[@id='table1']/tbody/tr/td[1]");
+            pageRows = new ElementLocator(Locator.CssSelector, "#table1 td:nth-child(1)");
 
         public SortablePage(DriverContext driverContext)
             : base(driverContext)
