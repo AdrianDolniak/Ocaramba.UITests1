@@ -25,20 +25,22 @@ namespace Ocaramba.UITests1.PageObjects
         /// <summary>
         /// Methods for this HomePage
         /// </summary>
-        public void OpenHomePage()
+        public InternetPage OpenHomePage()
         {
             var url = BaseConfiguration.GetUrlValue;
             Logger.Info(CultureInfo.CurrentCulture, "Opening page {0}", url);
             this.Driver.NavigateTo(new Uri(url));
+            return this;
         }
 
         /// <summary>
         /// Methods for this HomePage
         /// </summary>
-        public void GoToPage(string page)
+        public InternetPage GoToPage(string page)
         {
             Logger.Info(CultureInfo.CurrentCulture, "Clicking on element link {0}", page);
             this.Driver.GetElement(this.linkLocator.Format(page)).Click();
+            return new InternetPage(this.DriverContext);
         }
     }
 }
