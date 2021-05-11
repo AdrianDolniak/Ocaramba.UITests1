@@ -36,6 +36,7 @@
     <Compile Include="ProjectPageBase.cs" />
     <Compile Include="ProjectTestBase.cs" />
     <Compile Include="Tests\CustomTimeoutTestNUnit.cs" />
+    <Compile Include="Tests\HerokuappTestsNUnitDataDriven.cs" />
     <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Tests\FormAuthenticationPageTest.cs" />
     <Compile Include="Tests\SortablePageTest.cs" />
