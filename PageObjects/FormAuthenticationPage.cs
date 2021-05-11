@@ -19,7 +19,7 @@ namespace Ocaramba.UITests1.PageObjects
             userNameLoc = new ElementLocator(Locator.CssSelector, "Input[id={0}]"),
             passwordLoc = new ElementLocator(Locator.CssSelector, "Input[id={0}]"),
             loginButtonLoc = new ElementLocator(Locator.XPath, "//form[@id='login']/button"),
-            messageSecure = new ElementLocator(Locator.XPath, "//div[@id='content']//h2");
+            messageSecure = new ElementLocator(Locator.XPath, "//*[@id='flash']");
 
         public FormAuthenticationPage(DriverContext driverContext)
             : base(driverContext)
@@ -31,7 +31,8 @@ namespace Ocaramba.UITests1.PageObjects
         /// </summary>
         public string GetMessageSecure()
         {
-            var messageSecureText = this.Driver.GetElement(this.messageSecure).Text;
+            var messageSecureText = this.Driver.GetElement(this.messageSecure, ProjectBaseConfiguration.CustomTimeout, e => e.Displayed).Text;
+            messageSecureText = messageSecureText.Split('\r')[0];
             Logger.Info(CultureInfo.CurrentCulture, "Message text: {0}", messageSecureText);
             return messageSecureText;
         }

@@ -35,7 +35,7 @@ namespace Ocaramba.UITests1.PageObjects
 
         public bool GetOptionProperty()
         {
-            var optionSelectText = this.Driver.GetElement(this.optionSelect, BaseConfiguration.MediumTimeout, e => e.Enabled).Enabled;
+            var optionSelectText = this.Driver.GetElement(this.optionSelect, BaseConfiguration.MediumTimeout, e => e.Displayed & e.Enabled).Enabled;
             Logger.Info(CultureInfo.CurrentCulture, "Option selection bool: {0}", optionSelectText);
             return optionSelectText;
         }

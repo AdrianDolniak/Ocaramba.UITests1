@@ -21,7 +21,7 @@ namespace Ocaramba.UITests1.Tests
             formFormAuthentication.EnterUserName(BaseConfiguration.Username);
             formFormAuthentication.EnterPassword(BaseConfiguration.Password);
             formFormAuthentication.LogIn();
-            Assert.AreEqual("Secure Area", formFormAuthentication.GetMessageSecure());
+            Assert.AreEqual("You logged into a secure area!", formFormAuthentication.GetMessageSecure());
         }
     }
 }
