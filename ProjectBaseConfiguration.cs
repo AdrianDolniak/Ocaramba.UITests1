@@ -11,7 +11,13 @@ namespace Ocaramba.UITests1
     public static class ProjectBaseConfiguration
     {
         private static readonly string CurrentDirectory = Directory.GetCurrentDirectory();
-        
+
+        /// <summary>
+        /// Gets the custom Timeout.
+        /// </summary>
+        /// <value>
+        /// The data driven file.
+        /// </value>
         public static int CustomTimeout
         {
             get

@@ -33,7 +33,7 @@ namespace Ocaramba.UITests1.DataDriven
     {
         public static IEnumerable Credentials
         {
-            get { return DataDrivenHelper.ReadDataDriveFile(ProjectBaseConfiguration.DataDrivenFile, "credential", new[] { "user", "password" }, "credential"); }
+            get { return DataDrivenHelper.ReadDataDriveFile(ProjectBaseConfiguration.DataDrivenFile, "credential", new[] { "user", "password" }, "credentialXml"); }
         }
 
         public static IEnumerable CredentialsExcel
@@ -59,7 +59,7 @@ namespace Ocaramba.UITests1.DataDriven
         public static IEnumerable CredentialsCSV()
         {
             var path = TestContext.CurrentContext.TestDirectory;
-            path = string.Format(CultureInfo.CurrentCulture, "{0}{1}", path, @"\DataDriven\TestDataCsv.csv");
+            path = string.Format(CultureInfo.CurrentCulture, "{0}{1}", path, @"\DataDriven\TestDataDrivenCsv.csv");
             return DataDrivenHelper.ReadDataDriveFileCsv(path, new[] { "user", "password" }, "credentialCsv");
         }
     }

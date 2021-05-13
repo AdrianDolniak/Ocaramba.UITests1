@@ -46,7 +46,7 @@ namespace Ocaramba.UITests1.Tests
 
         [Test]
         [TestCaseSource(typeof(TestData), "CredentialsCSV")]
-        public void FormAuthenticationPageTestCsv(IDictionary<string, string> parameters)
+        public void FormAuthenticationPageTestCSV(IDictionary<string, string> parameters)
         {
             var basicAuthPage = new InternetPage(this.DriverContext);
             basicAuthPage.OpenHomePage();
