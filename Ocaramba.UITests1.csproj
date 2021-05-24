@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
@@ -27,6 +27,7 @@
     <Compile Include="PageObjects\DragAndDropPage.cs" />
     <Compile Include="PageObjects\DropdownPage.cs" />
     <Compile Include="PageObjects\DynamicLoadingPage.cs" />
+    <Compile Include="PageObjects\FileDownloadPage.cs" />
     <Compile Include="PageObjects\InternetPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\FormAuthenticationPage.cs" />
@@ -41,6 +42,7 @@
     <Compile Include="ProjectTestBase.cs" />
     <Compile Include="Tests\CustomTimeoutTestNUnit.cs" />
     <Compile Include="Tests\HerokuappTestsNUnitDataDriven.cs" />
+    <Compile Include="Tests\FileDownloadPageTest.cs" />
     <Compile Include="Tests\LoginPageTest.cs" />
     <Compile Include="Tests\FormAuthenticationPageTest.cs" />
     <Compile Include="Tests\SortablePageTest.cs" />
