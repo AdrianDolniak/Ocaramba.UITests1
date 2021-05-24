@@ -1,5 +1,5 @@
-﻿// <copyright file="TestData.cs" company="Ocaramba">
-// Copyright (c) Ocaramba. All rights reserved.
+﻿// <copyright file="TestData.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 // <license>
 //     The MIT License (MIT)
@@ -27,35 +27,55 @@ using NUnit.Framework;
 namespace Ocaramba.UITests1.DataDriven
 {
     /// <summary>
-    /// DataDriven methods for NUnit test framework
+    /// DataDriven methods for NUnit test framework.
     /// </summary>
     public static class TestData
     {
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
         public static IEnumerable Credentials
         {
             get { return DataDrivenHelper.ReadDataDriveFile(ProjectBaseConfiguration.DataDrivenFile, "credential", new[] { "user", "password" }, "credentialXml"); }
         }
 
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
         public static IEnumerable CredentialsExcel
         {
             get { return DataDrivenHelper.ReadXlsxDataDriveFile(ProjectBaseConfiguration.DataDrivenFileXlsx, "credential", new[] { "user", "password" }, "credentialExcel"); }
         }
 
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
         public static IEnumerable LinksSetTestName
         {
             get { return DataDrivenHelper.ReadDataDriveFile(ProjectBaseConfiguration.DataDrivenFile, "links", new[] { "number" }, "Count_links"); }
         }
 
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
         public static IEnumerable Links
         {
             get { return DataDrivenHelper.ReadDataDriveFile(ProjectBaseConfiguration.DataDrivenFile, "links"); }
         }
 
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
+        /// <returns>Return the data driven file and set the test name.</returns>
         public static IEnumerable LinksExcel()
         {
             return DataDrivenHelper.ReadXlsxDataDriveFile(ProjectBaseConfiguration.DataDrivenFileXlsx, "links");
         }
 
+        /// <summary>
+        /// Gets the data driven file and set the test name.
+        /// </summary>
+        /// <returns>Return the data driven file and set the test name.</returns>
         public static IEnumerable CredentialsCSV()
         {
             var path = TestContext.CurrentContext.TestDirectory;

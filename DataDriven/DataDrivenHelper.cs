@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="DataDrivenHelper.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -15,7 +19,7 @@ using Ocaramba.Exceptions;
 namespace Ocaramba.UITests1.DataDriven
 {
     /// <summary>
-    /// XML DataDriven methods for NUnit test framework <see href="https://github.com/ObjectivityLtd/Ocaramba/wiki/DataDriven-tests-from-Xml-files">More details on wiki</see>
+    /// XML DataDriven methods for NUnit test framework <see href="https://github.com/ObjectivityLtd/Ocaramba/wiki/DataDriven-tests-from-Xml-files">More details on wiki</see>.
     /// </summary>
     public static class DataDrivenHelper
     {
@@ -24,15 +28,15 @@ namespace Ocaramba.UITests1.DataDriven
         /// <summary>
         /// Reads the data drive file and set test name.
         /// </summary>
-        /// <param name="folder">Full path to XML DataDriveFile file</param>
+        /// <param name="folder">Full path to XML DataDriveFile file.</param>
         /// <param name="testData">Name of the child element in xml file.</param>
         /// <param name="diffParam">Values of listed parameters will be used in test case name.</param>
         /// <param name="testName">Name of the test, use as prefix for test case name.</param>
         /// <returns>
-        /// IEnumerable TestCaseData
+        /// IEnumerable TestCaseData.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">Exception when element not found in file</exception>
-        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row</exception>
+        /// <exception cref="System.ArgumentNullException">Exception when element not found in file.</exception>
+        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row.</exception>
         /// <example>How to use it: <code>
         /// public static IEnumerable Credentials
         /// {
@@ -78,14 +82,14 @@ namespace Ocaramba.UITests1.DataDriven
         /// <summary>
         /// Reads the Csv data drive file and set test name.
         /// </summary>
-        /// <param name="file">Full path to csv DataDriveFile file</param>
+        /// <param name="file">Full path to csv DataDriveFile file.</param>
         /// <param name="diffParam">The difference parameter.</param>
         /// <param name="testName">Name of the test, use as prefix for test case name.</param>
         /// <returns>
-        /// IEnumerable TestCaseData
+        /// IEnumerable TestCaseData.
         /// </returns>
-        /// <exception cref="System.InvalidOperationException">Exception when wrong cell type in file</exception>
-        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row</exception>
+        /// <exception cref="System.InvalidOperationException">Exception when wrong cell type in file.</exception>
+        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row.</exception>
         /// <example>How to use it: <code>
         ///  {
         ///  var path = TestContext.CurrentContext.TestDirectory;
@@ -133,10 +137,10 @@ namespace Ocaramba.UITests1.DataDriven
                             throw new DataDrivenReadException(
                             string.Format(
                                        " Exception while reading Csv Data Driven file\n searched key '{0}' not found \n for test {1} in file '{2}' at row {3}",
-                                        e.Message,
-                                        testName,
-                                        file,
-                                        row));
+                                       e.Message,
+                                       testName,
+                                       file,
+                                       row));
                         }
 
                         row = row + 1;
@@ -152,12 +156,12 @@ namespace Ocaramba.UITests1.DataDriven
         /// <summary>
         /// Reads the data drive file without setting test name.
         /// </summary>
-        /// <param name="folder">Full path to XML DataDriveFile file</param>
+        /// <param name="folder">Full path to XML DataDriveFile file.</param>
         /// <param name="testData">Name of the child element in xml file.</param>
         /// <returns>
-        /// IEnumerable TestCaseData
+        /// IEnumerable TestCaseData.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">Exception when element not found in file</exception>
+        /// <exception cref="System.ArgumentNullException">Exception when element not found in file.</exception>
         /// <example>How to use it: <code>
         /// public static IEnumerable Credentials
         /// {
@@ -178,15 +182,15 @@ namespace Ocaramba.UITests1.DataDriven
         /// <summary>
         /// Reads the Excel data drive file and optionaly set test name.
         /// </summary>
-        /// <param name="path">Full path to Excel DataDriveFile file</param>
+        /// <param name="path">Full path to Excel DataDriveFile file.</param>
         /// <param name="sheetName">Name of the sheet at xlsx file.</param>
         /// <param name="diffParam">Optional values of listed parameters will be used in test case name.</param>
         /// <param name="testName">Optional name of the test, use as prefix for test case name.</param>
         /// <returns>
-        /// IEnumerable TestCaseData
+        /// IEnumerable TestCaseData.
         /// </returns>
-        /// <exception cref="System.InvalidOperationException">Exception when wrong cell type in file</exception>
-        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row</exception>
+        /// <exception cref="System.InvalidOperationException">Exception when wrong cell type in file.</exception>
+        /// <exception cref="DataDrivenReadException">Exception when parameter not found in row.</exception>
         /// <example>How to use it: <code>
         /// public static IEnumerable CredentialsFromExcel
         /// {
@@ -275,8 +279,8 @@ namespace Ocaramba.UITests1.DataDriven
         /// <param name="diffParam">The difference parameter.</param>
         /// <param name="testParams">The test parameters.</param>
         /// <param name="testCaseName">Name of the test case.</param>
-        /// <returns>Test case name</returns>
-        /// <exception cref="NullReferenceException">Exception when trying to set test case name</exception>
+        /// <returns>Test case name.</returns>
+        /// <exception cref="NullReferenceException">Exception when trying to set test case name.</exception>
         private static string TestCaseName(string[] diffParam, Dictionary<string, string> testParams, string testCaseName)
         {
             if (diffParam != null && diffParam.Any())

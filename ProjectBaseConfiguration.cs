@@ -1,4 +1,8 @@
-﻿using System.Configuration;
+﻿// <copyright file="ProjectBaseConfiguration.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System.Configuration;
 using System.IO;
 using Ocaramba;
 using Ocaramba.Helpers;
@@ -6,7 +10,7 @@ using Ocaramba.Helpers;
 namespace Ocaramba.UITests1
 {
     /// <summary>
-    /// SeleniumConfiguration that consume app.config file
+    /// SeleniumConfiguration that consume app.config file.
     /// </summary>
     public static class ProjectBaseConfiguration
     {
@@ -65,7 +69,7 @@ namespace Ocaramba.UITests1
         }
 
         /// <summary>
-        /// Gets the Download Folder path
+        /// Gets the Download Folder path.
         /// </summary>
         public static string DownloadFolderPath
         {

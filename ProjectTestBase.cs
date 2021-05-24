@@ -1,4 +1,8 @@
-﻿using NUnit.Framework;
+﻿// <copyright file="ProjectTestBase.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using Ocaramba;
 using Ocaramba.Helpers;
@@ -7,14 +11,14 @@ using Ocaramba.Logger;
 namespace Ocaramba.UITests1
 {
     /// <summary>
-    /// The base class for all tests <see href="https://github.com/ObjectivityLtd/Ocaramba/wiki/ProjectTestBase-class">More details on wiki</see>
+    /// The base class for all tests <see href="https://github.com/ObjectivityLtd/Ocaramba/wiki/ProjectTestBase-class">More details on wiki</see>.
     /// </summary>
     public class ProjectTestBase : TestBase
     {
         private readonly DriverContext driverContext = new DriverContext();
 
         /// <summary>
-        /// Gets or sets logger instance for driver
+        /// Gets or sets logger instance for driver.
         /// </summary>
         public TestLogger LogTest
         {
@@ -30,7 +34,7 @@ namespace Ocaramba.UITests1
         }
 
         /// <summary>
-        /// Gets or Sets the driver context
+        /// Gets the driver context.
         /// </summary>
         protected DriverContext DriverContext
         {

@@ -1,22 +1,28 @@
 ﻿// NUnit 3 tests
-// See documentation : https://github.com/ObjectivityLtd/Ocaramba 
+// See documentation : https://github.com/ObjectivityLtd/Ocaramba
 
 using NUnit.Framework;
 using Ocaramba.UITests1.PageObjects;
 
 namespace Ocaramba.UITests1.Tests
 {
+    /// <summary>
+    /// Test - Check Login on Form Authentication Page.
+    /// </summary>
     [TestFixture]
     [Parallelizable(ParallelScope.Fixtures)]
     public class FormAuthenticationPageTest : ProjectTestBase
     {
+        /// <summary>
+        /// Test - Check Login on Form Authentication Page.
+        /// </summary>
         [Test]
         public void Exercise_5_Test()
         {
             // TODO: Add your test code here
-            var InternetPage = new InternetPage(this.DriverContext);
-            InternetPage.OpenHomePage();
-            InternetPage.GoToPage("login");
+            var internetPage = new InternetPage(this.DriverContext);
+            internetPage.OpenHomePage();
+            internetPage.GoToPage("login");
             var formFormAuthentication = new FormAuthenticationPage(this.DriverContext);
             formFormAuthentication.EnterUserName(BaseConfiguration.Username);
             formFormAuthentication.EnterPassword(BaseConfiguration.Password);
