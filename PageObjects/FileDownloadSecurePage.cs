@@ -1,4 +1,4 @@
-﻿// <copyright file="FileDownloadPage.cs" company="PlaceholderCompany">
+﻿// <copyright file="FileDownloadSecurePage.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -15,9 +15,9 @@ using OpenQA.Selenium.Chrome;
 namespace Ocaramba.UITests1.PageObjects
 {
     /// <summary>
-    /// Methods for InternetPage.
+    /// Methods for FileDownloadSecurePage.
     /// </summary>
-    public class FileDownloadPage : ProjectPageBase
+    public class FileDownloadSecurePage : ProjectPageBase
     {
         private static readonly NLog.Logger Logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
@@ -25,16 +25,26 @@ namespace Ocaramba.UITests1.PageObjects
         /// Locators for elements.
         /// </summary>
         private readonly ElementLocator
-            pageHeader = new ElementLocator(Locator.XPath, "//h3[.='File Downloader']"),
-            fileLink = new ElementLocator(Locator.CssSelector, "a[href='download/{0}']");
+            pageHeader = new ElementLocator(Locator.XPath, "//h3[.='Secure File Downloader']"),
+            fileLink = new ElementLocator(Locator.CssSelector, "a[href='download_secure/{0}']");
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FileDownloadPage"/> class.
+        /// Initializes a new instance of the <see cref="FileDownloadSecurePage"/> class.
         /// </summary>
         /// <param name="driverContext">driverContext.</param>
-        public FileDownloadPage(DriverContext driverContext)
+        public FileDownloadSecurePage(DriverContext driverContext)
             : base(driverContext)
         {
+        }
+
+        /// <summary>
+        /// Methods for this HomePage.
+        /// </summary>
+        /// <param name="username">The username.</param>
+        /// <param name="password">The password.</param>
+        public void SignIn(string username, string password)
+        {
+            this.Driver.Navigate().GoToUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/download_secure");
         }
 
         /// <summary>
@@ -55,7 +65,7 @@ namespace Ocaramba.UITests1.PageObjects
         /// <param name="fileName">The file name.</param>
         /// <param name="newName">The new file name.</param>
         /// <returns>Returns header.</returns>
-        public FileDownloadPage SaveFile(string fileName, string newName)
+        public FileDownloadSecurePage SaveFile(string fileName, string newName)
         {
             {
                 this.Driver.GetElement(this.fileLink.Format(fileName), "Click on file").Click();

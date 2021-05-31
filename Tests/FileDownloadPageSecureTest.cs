@@ -11,23 +11,24 @@ namespace Ocaramba.UITests1.Tests
     /// </summary>
     [TestFixture]
     [Parallelizable(ParallelScope.Fixtures)]
-    public class FileDownloadPageTest : ProjectTestBase
+    public class FileDownloadPageSecureTest : ProjectTestBase
     {
         /// <summary>
-        /// Test - Check login on page.
+        /// Test - Check secure download file.
         /// </summary>
         [Test]
-        public void Exercise_File_Download_Test()
+        public void Exercise_File_Download_Secure_Test()
         {
             // TODO: Add your test code here
             var internetPage = new InternetPage(this.DriverContext);
             internetPage.OpenHomePage();
-            internetPage.GoToPage("download");
-            var fileDownload = new FileDownloadPage(this.DriverContext);
+            internetPage.GoToPage("download_secure");
+            var fileDownloadSecurePage = new FileDownloadSecurePage(this.DriverContext);
+            fileDownloadSecurePage.SignIn("admin", "admin");
             Verify.That(
                 this.DriverContext,
-                () => Assert.AreEqual("File Downloader", fileDownload.GetHeader()));
-            fileDownload.SaveFile("some-file.txt", "new-file.txt");
+                () => Assert.AreEqual("Secure File Downloader", fileDownloadSecurePage.GetHeader()));
+            fileDownloadSecurePage.SaveFile("some-file.txt", "new-file.txt");
 
             // fileDownloadSecure.DeleteFile(); -> to delete last file (new-file.txt)
         }

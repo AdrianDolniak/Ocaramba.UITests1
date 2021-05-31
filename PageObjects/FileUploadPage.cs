@@ -1,4 +1,4 @@
-﻿// <copyright file="FileDownloadPage.cs" company="PlaceholderCompany">
+﻿// <copyright file="FileUploadPage.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -15,9 +15,9 @@ using OpenQA.Selenium.Chrome;
 namespace Ocaramba.UITests1.PageObjects
 {
     /// <summary>
-    /// Methods for InternetPage.
+    /// Methods for FileDownloadPage.
     /// </summary>
-    public class FileDownloadPage : ProjectPageBase
+    public class FileUploadPage : ProjectPageBase
     {
         private static readonly NLog.Logger Logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
@@ -25,14 +25,16 @@ namespace Ocaramba.UITests1.PageObjects
         /// Locators for elements.
         /// </summary>
         private readonly ElementLocator
-            pageHeader = new ElementLocator(Locator.XPath, "//h3[.='File Downloader']"),
-            fileLink = new ElementLocator(Locator.CssSelector, "a[href='download/{0}']");
+            pageHeader = new ElementLocator(Locator.XPath, "//h3[.='File Uploader']"),
+            chooseFileButton = new ElementLocator(Locator.Id, "file-upload"),
+            uploadFileButton = new ElementLocator(Locator.Id, "file-submit"),
+            fileUploadedPageHeader = new ElementLocator(Locator.XPath, "//h3[.='File Uploaded!']");
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FileDownloadPage"/> class.
+        /// Initializes a new instance of the <see cref="FileUploadPage"/> class.
         /// </summary>
         /// <param name="driverContext">driverContext.</param>
-        public FileDownloadPage(DriverContext driverContext)
+        public FileUploadPage(DriverContext driverContext)
             : base(driverContext)
         {
         }
@@ -52,16 +54,15 @@ namespace Ocaramba.UITests1.PageObjects
         /// <summary>
         /// Methods for this Page.
         /// </summary>
-        /// <param name="fileName">The file name.</param>
-        /// <param name="newName">The new file name.</param>
-        /// <returns>Returns header.</returns>
-        public FileDownloadPage SaveFile(string fileName, string newName)
+        /// <param name="newName">The file new name.</param>
+        /// <returns>Returns this.</returns>
+        public FileUploadPage UploadFile(string newName)
         {
             {
-                this.Driver.GetElement(this.fileLink.Format(fileName), "Click on file").Click();
-                FilesHelper.WaitForFileOfGivenName(fileName, this.DriverContext.DownloadFolder, false);
-                FileInfo file = FilesHelper.GetLastFile(this.DriverContext.DownloadFolder);
-                FilesHelper.RenameFile(5, file.Name, newName, this.DriverContext.DownloadFolder);
+                FilesHelper.CopyFile(BaseConfiguration.ShortTimeout, "file-to-upload.txt", newName, this.DriverContext.DownloadFolder, this.DriverContext.DownloadFolder + "\\Test\\");
+                this.Driver.GetElement(this.chooseFileButton).SendKeys(this.DriverContext.DownloadFolder + "\\Test\\" + newName);
+                this.Driver.GetElement(this.uploadFileButton).Click();
+                this.Driver.IsElementPresent(this.fileUploadedPageHeader, BaseConfiguration.ShortTimeout);
             }
 
             return this;

@@ -27,7 +27,9 @@
     <Compile Include="PageObjects\DragAndDropPage.cs" />
     <Compile Include="PageObjects\DropdownPage.cs" />
     <Compile Include="PageObjects\DynamicLoadingPage.cs" />
+    <Compile Include="PageObjects\FileDownloadSecurePage.cs" />
     <Compile Include="PageObjects\FileDownloadPage.cs" />
+    <Compile Include="PageObjects\FileUploadPage.cs" />
     <Compile Include="PageObjects\InternetPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\FormAuthenticationPage.cs" />
@@ -36,6 +38,8 @@
     <Compile Include="Tests\DragAndDropPageTest.cs" />
     <Compile Include="Tests\DropdownPageTest.cs" />
     <Compile Include="Tests\DynamicLoadingPageTest.cs" />
+    <Compile Include="Tests\FileDownloadPageSecureTest.cs" />
+    <Compile Include="Tests\FileUploadDownloadPageTest.cs" />
     <Compile Include="Tests\HerokuappTestsNUnit.cs" />
     <Compile Include="ProjectBaseConfiguration.cs" />
     <Compile Include="ProjectPageBase.cs" />
