@@ -23,6 +23,7 @@ namespace Ocaramba.UITests1.Tests
             // TODO: Add your test code here
             var internetPage = new InternetPage(this.DriverContext);
             internetPage.GoToPageNew("https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html");
+            this.DriverContext.WindowMaximize();
             var selectPage = new SelectPage(this.DriverContext);
             selectPage.SelectSingle("Friday");
             Verify.That(
@@ -41,6 +42,7 @@ namespace Ocaramba.UITests1.Tests
             // TODO: Add your test code here
             var internetPage = new InternetPage(this.DriverContext);
             internetPage.GoToPageNew("https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html");
+            this.DriverContext.WindowMaximize();
             var selectPage = new SelectPage(this.DriverContext);
             selectPage.SelectMulti("Washington");
             Verify.That(
@@ -59,6 +61,7 @@ namespace Ocaramba.UITests1.Tests
             // TODO: Add your test code here
             var internetPage = new InternetPage(this.DriverContext);
             internetPage.GoToPageNew("https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html");
+            this.DriverContext.WindowMaximize();
             var selectPage = new SelectPage(this.DriverContext);
             selectPage.SelectMulti("Florida", "Texas");
             Verify.That(
