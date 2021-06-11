@@ -56,5 +56,18 @@ namespace Ocaramba.UITests1.PageObjects
             this.Driver.GetElement(this.linkLocator.Format(page)).Click();
             return new InternetPage(this.DriverContext);
         }
+
+        /// <summary>
+        /// Methods for this Page.
+        /// </summary>
+        /// <param name="pageNew"> Page address.</param>
+        /// <returns> SelectPage DriverContext.</returns>
+        public InternetPage GoToPageNew(string pageNew)
+        {
+            string url = pageNew;
+            Logger.Info(CultureInfo.CurrentCulture, "Go to the Page: {0}", url);
+            this.Driver.NavigateTo(new Uri(url));
+            return new InternetPage(this.DriverContext);
+        }
     }
 }

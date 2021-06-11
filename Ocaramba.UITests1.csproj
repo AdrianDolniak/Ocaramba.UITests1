@@ -24,6 +24,7 @@
 	<ItemGroup>
     <Compile Include="DataDriven\DataDrivenHelper.cs" />
     <Compile Include="DataDriven\TestData.cs" />
+    <Compile Include="PageObjects\SelectPage.cs" />
     <Compile Include="PageObjects\DragAndDropPage.cs" />
     <Compile Include="PageObjects\CheckboxesPage.cs" />
     <Compile Include="PageObjects\DropdownPage.cs" />
@@ -36,6 +37,7 @@
     <Compile Include="PageObjects\FormAuthenticationPage.cs" />
     <Compile Include="PageObjects\SortablePage.cs" />
     <Compile Include="PageObjects\StatusCodesPage.cs" />
+    <Compile Include="Tests\SelectPageTest.cs" />
     <Compile Include="Tests\DragAndDropPageTest.cs" />
     <Compile Include="Tests\DropdownPageTest.cs" />
     <Compile Include="Tests\DynamicLoadingPageTest.cs" />

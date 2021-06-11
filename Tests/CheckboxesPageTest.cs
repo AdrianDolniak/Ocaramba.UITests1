@@ -7,7 +7,7 @@ using Ocaramba.UITests1.PageObjects;
 namespace Ocaramba.UITests1.Tests
 {
     /// <summary>
-    /// Test - Check file download.
+    /// Test - Check Checkboxes.
     /// </summary>
     [TestFixture]
     [Parallelizable(ParallelScope.Fixtures)]
