@@ -46,7 +46,7 @@ namespace Ocaramba.UITests1.Tests
             Verify.That(
                 this.DriverContext,
                 () => Assert.AreEqual("This would be your first example on select dropd down list to with Selenium.", selectPage.GetHeader()),
-                () => Assert.IsTrue(selectPage.GetTextSelected("getall-selected").Contains("Washington")));
+                () => Assert.AreEqual("First selected option is : Washington", selectPage.GetTextSelected("getall-selected")));
         }
 
         /// <summary>
@@ -64,8 +64,7 @@ namespace Ocaramba.UITests1.Tests
             Verify.That(
                 this.DriverContext,
                 () => Assert.AreEqual("This would be your first example on select dropd down list to with Selenium.", selectPage.GetHeader()),
-                () => Assert.IsTrue(selectPage.GetTextSelected("getall-selected").Contains("Florida")),
-                () => Assert.IsTrue(selectPage.GetTextSelected("getall-selected").Contains("Texas")));
+                () => Assert.AreEqual("Options selected are : Florida,Texas", selectPage.GetTextSelected("getall-selected")));
         }
     }
 }

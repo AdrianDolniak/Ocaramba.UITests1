@@ -7,7 +7,7 @@ dotnet_diagnostic.SA1132.severity = none
 dotnet_diagnostic.SA1633.severity = none
 
 # SA1200: Using directives should be placed correctly
-dotnet_diagnostic.SA1200.severity = none
+dotnet_diagnostic.SA1200.severity = silent
 
 # SA0001: XML comment analysis disabled
 dotnet_diagnostic.SA0001.severity = warning
