@@ -29,7 +29,7 @@ namespace Ocaramba.UITests1.Tests
             Verify.That(
                 this.DriverContext,
                 () => Assert.AreEqual("This would be your first example on select dropd down list to with Selenium.", selectPage.GetHeader()),
-                () => Assert.IsTrue(selectPage.GetTextSelected("selected-value").Contains("Friday")));
+                () => Assert.AreEqual("Day selected :- Friday", selectPage.GetTextSelected("selected-value")));
         }
 
         /// <summary>
