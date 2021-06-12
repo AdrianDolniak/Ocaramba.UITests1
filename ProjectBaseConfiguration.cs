@@ -19,14 +19,22 @@ namespace Ocaramba.UITests1
         /// <summary>
         /// Gets the custom Timeout.
         /// </summary>
-        /// <value>
-        /// The data driven file.
-        /// </value>
         public static int CustomTimeout
         {
             get
             {
                 return int.Parse(BaseConfiguration.Builder["appSettings:customTimeout"]);
+            }
+        }
+
+        /// <summary>
+        /// Gets the New Page.
+        /// </summary>
+        public static string NewPage
+        {
+            get
+            {
+                return BaseConfiguration.Builder["appSettings:newUrl"];
             }
         }
 

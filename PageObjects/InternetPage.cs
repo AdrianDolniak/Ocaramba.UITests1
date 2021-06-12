@@ -64,9 +64,8 @@ namespace Ocaramba.UITests1.PageObjects
         /// <returns> SelectPage DriverContext.</returns>
         public InternetPage GoToPageNew(string pageNew)
         {
-            string url = pageNew;
-            Logger.Info(CultureInfo.CurrentCulture, "Go to the Page: {0}", url);
-            this.Driver.NavigateTo(new Uri(url));
+            Logger.Info(CultureInfo.CurrentCulture, "Go to the Page: {0}", pageNew);
+            this.Driver.NavigateTo(new Uri(pageNew));
             return new InternetPage(this.DriverContext);
         }
     }
