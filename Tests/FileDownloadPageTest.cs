@@ -28,8 +28,7 @@ namespace Ocaramba.UITests1.Tests
                 this.DriverContext,
                 () => Assert.AreEqual("File Downloader", fileDownload.GetHeader()));
             fileDownload.SaveFile("some-file.txt", "new-file.txt");
-
-            // fileDownloadSecure.DeleteFile(); -> to delete last file (new-file.txt)
+            fileDownload.DeleteFile("new-file.txt");
         }
     }
 }

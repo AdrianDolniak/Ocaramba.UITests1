@@ -46,6 +46,7 @@ namespace Ocaramba.UITests1.Tests
                 this.DriverContext,
                 () => Assert.AreEqual("File Downloader", fileDownload.GetHeader()));
             fileDownload.SaveFile("file-uploaded.txt", "file-uploaded-downloaded.txt");
+            fileDownload.DeleteFile("file-uploaded-downloaded.txt");
         }
     }
 }

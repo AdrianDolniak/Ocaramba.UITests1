@@ -59,8 +59,8 @@ namespace Ocaramba.UITests1.PageObjects
         public FileUploadPage UploadFile(string newName)
         {
             {
-                FilesHelper.CopyFile(BaseConfiguration.ShortTimeout, "file-to-upload.txt", newName, this.DriverContext.DownloadFolder, this.DriverContext.DownloadFolder + "\\Test\\");
-                this.Driver.GetElement(this.chooseFileButton).SendKeys(this.DriverContext.DownloadFolder + "\\Test\\" + newName);
+                FilesHelper.CopyFile(BaseConfiguration.ShortTimeout, "file-to-upload.txt", newName, this.DriverContext.DownloadFolder + "\\TestFilesToUpload\\", this.DriverContext.DownloadFolder + "\\TestFilesUploaded\\");
+                this.Driver.GetElement(this.chooseFileButton).SendKeys(this.DriverContext.DownloadFolder + "\\TestFilesUploaded\\" + newName);
                 this.Driver.GetElement(this.uploadFileButton).Click();
                 this.Driver.IsElementPresent(this.fileUploadedPageHeader, BaseConfiguration.ShortTimeout);
             }

@@ -64,7 +64,7 @@ namespace Ocaramba.UITests1.PageObjects
         /// </summary>
         /// <param name="fileName">The file name.</param>
         /// <param name="newName">The new file name.</param>
-        /// <returns>Returns header.</returns>
+        /// <returns>Returns this.</returns>
         public FileDownloadSecurePage SaveFile(string fileName, string newName)
         {
             {
@@ -72,6 +72,20 @@ namespace Ocaramba.UITests1.PageObjects
                 FilesHelper.WaitForFileOfGivenName(fileName, this.DriverContext.DownloadFolder, false);
                 FileInfo file = FilesHelper.GetLastFile(this.DriverContext.DownloadFolder);
                 FilesHelper.RenameFile(5, file.Name, newName, this.DriverContext.DownloadFolder);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Methods for this Page.
+        /// </summary>
+        /// <param name="fileName">The file name.</param>
+        /// <returns>Returns this.</returns>
+        public FileDownloadSecurePage DeleteFile(string fileName)
+        {
+            {
+                FilesHelper.DeleteFile(fileName, this.DriverContext.DownloadFolder);
             }
 
             return this;

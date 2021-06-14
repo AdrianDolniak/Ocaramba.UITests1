@@ -54,14 +54,29 @@ namespace Ocaramba.UITests1.PageObjects
         /// </summary>
         /// <param name="fileName">The file name.</param>
         /// <param name="newName">The new file name.</param>
-        /// <returns>Returns header.</returns>
+        /// <returns>Returns this.</returns>
         public FileDownloadPage SaveFile(string fileName, string newName)
         {
             {
                 this.Driver.GetElement(this.fileLink.Format(fileName), "Click on file").Click();
                 FilesHelper.WaitForFileOfGivenName(fileName, this.DriverContext.DownloadFolder, false);
+                WaitHelper.Wait(() => FilesHelper.CountFiles(this.DriverContext.DownloadFolder, FileType.Txt) > 0, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(1), "Expected files count greater than 0.");
                 FileInfo file = FilesHelper.GetLastFile(this.DriverContext.DownloadFolder);
                 FilesHelper.RenameFile(5, file.Name, newName, this.DriverContext.DownloadFolder);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Methods for this Page.
+        /// </summary>
+        /// <param name="fileName">The file name.</param>
+        /// <returns>Returns this.</returns>
+        public FileDownloadPage DeleteFile(string fileName)
+        {
+            {
+                FilesHelper.DeleteFile(fileName, this.DriverContext.DownloadFolder);
             }
 
             return this;
