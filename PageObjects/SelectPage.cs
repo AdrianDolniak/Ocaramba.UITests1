@@ -70,7 +70,7 @@ namespace Ocaramba.UITests1.PageObjects
         /// Select one option from a dropdowwn list.
         /// </summary>
         /// <param name="textFirst">Selected first item.</param>
-        /// <param name="textSecond">Selected second item.</param>
+        /// <param name="textSecond">Selected second item [Optional].</param>
         /// <returns>Returns SelectPage.</returns>
         public SelectPage SelectMulti(string textFirst, [Optional] string textSecond)
         {
@@ -84,7 +84,7 @@ namespace Ocaramba.UITests1.PageObjects
                     .Perform();
                 this.Driver.GetElement(this.getFirstSelectedButton).Click();
                 this.logger.Info(CultureInfo.CurrentCulture, "{0} was selected.", selectedOne.Text);
-             }
+            }
             else
             {
                 var selectedFirst = this.Driver.GetElement(this.multiSelect.Format(textFirst));

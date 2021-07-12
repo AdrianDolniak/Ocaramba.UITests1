@@ -17,6 +17,17 @@ namespace Ocaramba.UITests1
         private static readonly string CurrentDirectory = Directory.GetCurrentDirectory();
 
         /// <summary>
+        /// Gets Connection to DB (auth).
+        /// </summary>
+        public static string ConnectionString
+        {
+            get
+            {
+                return BaseConfiguration.Builder["appSettings:ConnectionString"];
+            }
+        }
+
+        /// <summary>
         /// Gets the custom Timeout.
         /// </summary>
         public static int CustomTimeout

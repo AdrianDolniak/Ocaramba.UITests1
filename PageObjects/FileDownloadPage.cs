@@ -60,7 +60,8 @@ namespace Ocaramba.UITests1.PageObjects
             {
                 this.Driver.GetElement(this.fileLink.Format(fileName), "Click on file").Click();
                 FilesHelper.WaitForFileOfGivenName(fileName, this.DriverContext.DownloadFolder, false);
-                WaitHelper.Wait(() => FilesHelper.CountFiles(this.DriverContext.DownloadFolder, FileType.Txt) > 0, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(1), "Expected files count greater than 0.");
+                WaitHelper.Wait(
+                    () => FilesHelper.CountFiles(this.DriverContext.DownloadFolder, FileType.Txt) > 0, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(1), "Expected files count greater than 0.");
                 FileInfo file = FilesHelper.GetLastFile(this.DriverContext.DownloadFolder);
                 FilesHelper.RenameFile(5, file.Name, newName, this.DriverContext.DownloadFolder);
             }

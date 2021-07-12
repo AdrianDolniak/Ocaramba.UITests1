@@ -12,6 +12,7 @@
     <PackageReference Include="NPOI" Version="2.4.1" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Ocaramba" Version="3.2.12" />
     <PackageReference Include="OcarambaLite" Version="3.2.12" />
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.29.0" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.150.1.2" />
@@ -24,6 +25,7 @@
 	<ItemGroup>
     <Compile Include="DataDriven\DataDrivenHelper.cs" />
     <Compile Include="DataDriven\TestData.cs" />
+    <Compile Include="SqlObjects\SqlData.cs" />
     <Compile Include="PageObjects\SelectPage.cs" />
     <Compile Include="PageObjects\DragAndDropPage.cs" />
     <Compile Include="PageObjects\CheckboxesPage.cs" />
@@ -37,6 +39,7 @@
     <Compile Include="PageObjects\FormAuthenticationPage.cs" />
     <Compile Include="PageObjects\SortablePage.cs" />
     <Compile Include="PageObjects\StatusCodesPage.cs" />
+    <Compile Include="Tests\SqlDataTest.cs" />
     <Compile Include="Tests\SelectPageTest.cs" />
     <Compile Include="Tests\DragAndDropPageTest.cs" />
     <Compile Include="Tests\DropdownPageTest.cs" />
