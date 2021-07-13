@@ -24,9 +24,9 @@ namespace Ocaramba.UITests1.Tests
             internetPage.OpenHomePage();
             internetPage.GoToPage("dynamic_loading");
             var example1 = new DynamicLoadingPage(this.DriverContext);
-            example1.ClickOnExample1Link("dynamic_loading/1");
+            example1.ClickOnExampleLink("1");
             var start = new DynamicLoadingPage(this.DriverContext);
-            start.ClickOnStartButtonExample1("start>button");
+            start.ClickOnStartButtonExample1("start");
             var finish = new DynamicLoadingPage(this.DriverContext).GetText("finish");
             Assert.AreEqual("Hello World!", finish);
         }
@@ -42,9 +42,9 @@ namespace Ocaramba.UITests1.Tests
             internetPage.OpenHomePage();
             internetPage.GoToPage("dynamic_loading");
             var example2 = new DynamicLoadingPage(this.DriverContext);
-            example2.ClickOnExample2Link("dynamic_loading/2");
+            example2.ClickOnExampleLink("2");
             var start = new DynamicLoadingPage(this.DriverContext);
-            start.ClickOnStartButtonExample2("start>button");
+            start.ClickOnStartButtonExample2("start");
             var finish = new DynamicLoadingPage(this.DriverContext).GetText("finish");
             Assert.AreEqual("Hello World!", finish);
         }

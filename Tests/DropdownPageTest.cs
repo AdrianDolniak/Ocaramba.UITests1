@@ -25,7 +25,7 @@ namespace Ocaramba.UITests1.Tests
             internetPage.GoToPage("dropdown");
             var dropdownPage = new DropdownPage(this.DriverContext);
             Assert.AreEqual("Dropdown List", dropdownPage.GetHeader());
-            Assert.True(dropdownPage.GetOptionProperty());
+            Assert.False(dropdownPage.GetOptionProperty());
         }
     }
 }

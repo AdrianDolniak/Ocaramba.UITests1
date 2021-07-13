@@ -22,8 +22,8 @@ namespace Ocaramba.UITests1.PageObjects
         /// Locators for elements.
         /// </summary>
         private readonly ElementLocator
-            pageHeader = new ElementLocator(Locator.XPath, "//h2[.='Login Page']"),
-            loginButton = new ElementLocator(Locator.XPath, "//i[.=' Login']");
+            pageHeader = new ElementLocator(Locator.CssSelector, ".example>h2"),
+            loginButton = new ElementLocator(Locator.CssSelector, ".radius>i");
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginPage"/> class.

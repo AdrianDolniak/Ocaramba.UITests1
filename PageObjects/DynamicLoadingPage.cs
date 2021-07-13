@@ -38,10 +38,10 @@ namespace Ocaramba.UITests1.PageObjects
         /// Methods for this Example1.
         /// </summary>
         /// <param name="page">The page name.</param>
-        public void ClickOnExample1Link(string page)
+        public void ClickOnExampleLink(string page)
         {
             this.logger.Info(CultureInfo.CurrentCulture, "Clicking on element link");
-            this.Driver.GetElement(this.linkLocator.Format(page)).Click();
+            this.Driver.GetElement(this.linkLocator.Format("dynamic_loading/" + page)).Click();
         }
 
         /// <summary>
@@ -51,18 +51,8 @@ namespace Ocaramba.UITests1.PageObjects
         public void ClickOnStartButtonExample1(string button)
         {
             this.logger.Info(CultureInfo.CurrentCulture, "Clicking on element link");
-            this.Driver.GetElement(this.startButton.Format(button)).Click();
+            this.Driver.GetElement(this.startButton.Format(button + ">button")).Click();
             this.Driver.WaitUntilElementIsNoLongerFound(this.startButton.Format("loading"), BaseConfiguration.MediumTimeout);
-        }
-
-        /// <summary>
-        /// Methods for this Example2.
-        /// </summary>
-        /// <param name="page">The page name.</param>
-        public void ClickOnExample2Link(string page)
-        {
-            this.logger.Info(CultureInfo.CurrentCulture, "Clicking on element link");
-            this.Driver.GetElement(this.linkLocator.Format(page)).Click();
         }
 
         /// <summary>
@@ -72,7 +62,7 @@ namespace Ocaramba.UITests1.PageObjects
         public void ClickOnStartButtonExample2(string button)
         {
             this.logger.Info(CultureInfo.CurrentCulture, "Clicking on element link");
-            this.Driver.GetElement(this.startButton.Format(button)).Click();
+            this.Driver.GetElement(this.startButton.Format(button + ">button")).Click();
             this.Driver.WaitForAjax();
         }
 

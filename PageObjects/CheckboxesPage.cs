@@ -8,6 +8,7 @@ using NLog;
 using Ocaramba;
 using Ocaramba.Extensions;
 using Ocaramba.Types;
+using Ocaramba.WebElements;
 
 namespace Ocaramba.UITests1.PageObjects
 {
@@ -50,21 +51,23 @@ namespace Ocaramba.UITests1.PageObjects
         /// </summary>
         /// <param name="checkBox">The checkbox number.</param>
         /// <returns>Returns status of checkbox.</returns>
-        public bool SelectCheckBox(string checkBox)
+        public bool SelectCheckBox(int checkBox)
         {
             var checkBoxSelect = this.Driver.GetElement(this.checkBox.Format(checkBox), BaseConfiguration.MediumTimeout, e => e.Displayed & e.Enabled);
             this.logger.Info(CultureInfo.CurrentCulture, "Checkbox is selected: {0}", checkBoxSelect.Selected);
             if (checkBoxSelect.Selected == false)
             {
                 this.logger.Info(CultureInfo.CurrentCulture, "Click on Checkbox");
-                checkBoxSelect.Click();
+                this.Driver.GetElement<Checkbox>(this.checkBox.Format(checkBox))
+                    .TickCheckbox();
                 this.logger.Info(CultureInfo.CurrentCulture, "Checkbox is selected: {0}", checkBoxSelect.Selected);
                 return checkBoxSelect.Selected;
             }
             else
             {
                 this.logger.Info(CultureInfo.CurrentCulture, "Click on Checkbox");
-                checkBoxSelect.Click();
+                this.Driver.GetElement<Checkbox>(this.checkBox.Format(checkBox))
+                    .UntickCheckbox();
                 this.logger.Info(CultureInfo.CurrentCulture, "Checkbox is selected: {0}", checkBoxSelect.Selected);
             }
 

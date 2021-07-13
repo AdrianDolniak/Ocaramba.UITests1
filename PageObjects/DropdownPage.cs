@@ -22,8 +22,8 @@ namespace Ocaramba.UITests1.PageObjects
         /// Locators for elements.
         /// </summary>
         private readonly ElementLocator
-            pageHeader = new ElementLocator(Locator.XPath, "//h3[.='Dropdown List']"),
-            optionSelect = new ElementLocator(Locator.CssSelector, "[id='dropdown']");
+            pageHeader = new ElementLocator(Locator.CssSelector, ".example>h3"),
+            optionSelect = new ElementLocator(Locator.CssSelector, "#dropdown>option:nth-child(1)");
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DropdownPage"/> class.
@@ -51,7 +51,7 @@ namespace Ocaramba.UITests1.PageObjects
         /// <returns>Returns option property status.</returns>
         public bool GetOptionProperty()
         {
-            var optionSelectText = this.Driver.GetElement(this.optionSelect, BaseConfiguration.MediumTimeout, e => e.Displayed & e.Enabled).Enabled;
+            var optionSelectText = this.Driver.GetElement(this.optionSelect, BaseConfiguration.MediumTimeout, e => e.Displayed).Enabled;
             this.logger.Info(CultureInfo.CurrentCulture, "Option selection bool: {0}", optionSelectText);
             return optionSelectText;
         }

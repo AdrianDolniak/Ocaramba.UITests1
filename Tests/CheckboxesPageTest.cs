@@ -28,7 +28,7 @@ namespace Ocaramba.UITests1.Tests
             Verify.That(
                 this.DriverContext,
                 () => Assert.AreEqual("Checkboxes", checkBoxesPage.GetHeader()),
-                () => Assert.IsTrue(checkBoxesPage.SelectCheckBox("1")));
+                () => Assert.IsTrue(checkBoxesPage.SelectCheckBox(1)));
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Ocaramba.UITests1.Tests
             Verify.That(
                 this.DriverContext,
                 () => Assert.AreEqual("Checkboxes", checkBoxesPage.GetHeader()),
-                () => Assert.IsFalse(checkBoxesPage.SelectCheckBox("2")));
+                () => Assert.IsFalse(checkBoxesPage.SelectCheckBox(2)));
         }
     }
 }
